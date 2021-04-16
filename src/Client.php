@@ -224,7 +224,6 @@ class Client
                 'grant_type'    => 'refresh_token',
                 'client_id'     => $this->config['client_id'],
                 'client_secret' => $this->config['client_secret'],
-                'redirect_uri'  => $this->getRedirectUri(),
                 'refresh_token' => $this->refreshToken
             ]
         ]);
