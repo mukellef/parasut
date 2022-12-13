@@ -339,7 +339,7 @@ class Client
      */
     public function getClient($appendCompanyId)
     {
-        $this->client = new \GuzzleHttp\Client([
+        $this->client = app('GuzzleClient')([
             'base_uri' => $this->getBaseUrl($appendCompanyId),
             'headers'  => [
                 'Authorization' => $this->getAuth(),
