@@ -7,6 +7,8 @@ use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\RequestException;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
+use yedincisenol\Parasut\Models\Warehouse;
+use yedincisenol\Parasut\Models\StockUpdate;
 use yedincisenol\Parasut\Exceptions\AccountExpiredException;
 use yedincisenol\Parasut\Exceptions\NotFoundException;
 use yedincisenol\Parasut\Exceptions\ParasutException;
@@ -562,5 +564,15 @@ class Client
     public function me()
     {
         return new Me($this);
+    }
+
+    public function warehouse()
+    {
+        return new Warehouse($this);
+    }
+
+    public function stockUpdate()
+    {
+        return new StockUpdate($this);
     }
 }
