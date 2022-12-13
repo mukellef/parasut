@@ -268,9 +268,12 @@ class Client
      */
     private function guzzleClient()
     {
-        return new \GuzzleHttp\Client([
+        return app('GuzzleClient')([
             'base_url' => $this->getTokenBaseUrl()
         ]);
+//        return new \GuzzleHttp\Client([
+//            'base_url' => $this->getTokenBaseUrl()
+//        ]);
     }
 
     /**
