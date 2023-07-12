@@ -34,4 +34,20 @@ class SaleInvoice extends Model
 
         return new Response($model->getBody());
     }
+
+    /**
+     * Cancel a invoice
+     * @param $id
+     * @return bool
+     * @throws GuzzleException
+     * @throws NotFoundException
+     * @throws ParasutException
+     * @throws UnproccessableEntityException
+     */
+    public function cancel($id)
+    {
+        $response = $this->parasut->request('DELETE', $this->path . '/' . $id. '/cancel');
+
+        return $response->getStatusCode() == 204;
+    }
 }
